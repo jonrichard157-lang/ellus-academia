@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
+import { motion, useScroll, useTransform, useReducedMotion, type Variants } from 'framer-motion';
 import { Play, Pause, ArrowRight, MessageCircle } from 'lucide-react';
 import { GYM_DATA, HERO_FEATURES, getWhatsAppLink } from '../../constants';
 import { Button } from '../ui/Button';
@@ -28,7 +28,7 @@ export const Hero: React.FC = () => {
     }
   };
 
-  const fadeUpVariants = {
+  const fadeUpVariants: Variants = {
     hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 24 },
     visible: (custom: number = 0) => ({
       opacity: 1,
@@ -36,7 +36,7 @@ export const Hero: React.FC = () => {
       transition: {
         duration: 0.75,
         delay: custom * 0.1,
-        ease: [0.16, 1, 0.3, 1],
+        ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
       },
     }),
   };

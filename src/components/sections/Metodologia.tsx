@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion, type Variants } from 'framer-motion';
 import { BIOMECHANICS_CARDS } from '../../constants';
 import { Badge } from '../ui/Badge';
 import { Card } from '../ui/Card';
@@ -7,7 +7,7 @@ import { Card } from '../ui/Card';
 export const Metodologia: React.FC = () => {
   const shouldReduceMotion = useReducedMotion();
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: {},
     visible: {
       transition: {
@@ -16,7 +16,7 @@ export const Metodologia: React.FC = () => {
     },
   };
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: {
       opacity: 0,
       y: shouldReduceMotion ? 0 : 30,
@@ -26,7 +26,7 @@ export const Metodologia: React.FC = () => {
       y: 0,
       transition: {
         duration: 0.65,
-        ease: [0.16, 1, 0.3, 1],
+        ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
       },
     },
   };
@@ -38,7 +38,7 @@ export const Metodologia: React.FC = () => {
           initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
           className="max-w-3xl mb-16"
         >
           <Badge variant="accent" className="mb-4">
