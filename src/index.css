@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  /* =========================================================================
+     PALETA OFICIAL DA ELLUS ACADEMIA (Extraída do Perfil Oficial / Logotipo)
+     Verde Oliva / Sage (#96AC62), Preto Profundo (#0A0C0E) e Cinzas Carvão
+     ========================================================================= */
+  --color-background-deep: #0a0c0e;
+  --color-background-surface: #111417;
+  --color-background-elevated: #171b1e;
+  
+  --color-metallic-900: #1a1e22;
+  --color-metallic-800: #242a30;
+  --color-metallic-700: #363e46;
+  --color-metallic-600: #4c5762;
+  --color-metallic-500: #6f7c89;
+  --color-metallic-400: #9da8b3;
+
+  /* Verde Oliva / Sage Oficial do Logo Ellus */
+  --color-ellus-green: #96ac62;
+  --color-ellus-green-hover: #a8c26f;
+  --color-ellus-green-bright: #b9d87b;
+  --color-ellus-green-dark: #273114;
+  --color-ellus-green-surface: #151c0d;
+  --color-ellus-green-border: #324018;
+  --color-ellus-green-glow: rgba(150, 172, 98, 0.28);
+
+  /* Mapeamento de Cores para Integrar em Todas as Seções */
+  --color-ellus-red: #96ac62;
+  --color-ellus-red-hover: #a8c26f;
+  --color-ellus-red-dark: #273114;
+  --color-ellus-red-glow: rgba(150, 172, 98, 0.28);
+
+  /* Tipografia: Display para Títulos e Neutra para Leitura */
+  --font-display: "Plus Jakarta Sans", "Syne", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto; /* Gerenciado pelo Lenis para fluidez máxima */
+    background-color: var(--color-background-deep);
+    color: #f4f6f1;
+    font-family: var(--font-sans);
+  }
+
+  /* Lenis Smooth Scroll Integration */
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+
+  body {
+    margin: 0;
+    overflow-x: hidden;
+    background-color: var(--color-background-deep);
+    color: #f4f6f1;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
